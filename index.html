@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КиберСеть Безопасность - Элитные Хакерские Услуги</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Matrix Background -->
+    <canvas id="matrix-bg"></canvas>
+    
+    <!-- Hack Modal -->
+    <div class="hack-modal" id="hackModal">
+        <div class="hack-content">
+            <button class="hack-close" onclick="closeHackModal()">&times;</button>
+            <div class="hack-header">
+                <h2 class="hack-title">SYSTEM BREACH INITIATED</h2>
+                <p class="hack-subtitle">Unauthorized access in progress...</p>
+            </div>
+            <div class="hack-terminal" id="hackTerminal">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="hackProgress"></div>
+            </div>
+            <form class="contact-form" id="hackContactForm">
+                <div class="form-group">
+                    <label for="hackName">Имя</label>
+                    <input type="text" id="hackName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="hackEmail">Email</label>
+                    <input type="email" id="hackEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="hackPhone">Телефон</label>
+                    <input type="tel" id="hackPhone" name="phone" required>
+                </div>
+                <button type="submit" class="btn-submit">
+                    <span>ПЕРЕДАТЬ ДАННЫЕ</span>
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Scan Line Effect -->
+    <div class="scan-line"></div>
+    
+    <!-- Screen Crack Effect -->
+    <div class="screen-crack" id="screenCrack">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path class="crack-line crack-1" d="M20,10 Q30,20 40,15 T60,25 T80,20 Q90,30 95,40"/>
+            <path class="crack-line crack-2" d="M10,30 Q20,40 35,35 T55,45 T75,40 Q85,50 90,60"/>
+            <path class="crack-line crack-3" d="M5,50 Q15,60 30,55 T50,65 T70,60 Q80,70 85,80"/>
+            <path class="crack-line crack-4" d="M15,70 Q25,80 40,75 T60,85 T80,80 Q90,90 95,95"/>
+        </svg>
+    </div>
+    
+    <!-- Blue Screen of Death -->
+    <div class="bsod-screen" id="bsodScreen">
+        <div class="bsod-content">
+            <div class="bsod-header">
+                <h1>:(</h1>
+                <p>Your PC ran into a problem and needs to restart. We're just collecting some error info, and then we'll restart for you.</p>
+            </div>
+            <div class="bsod-details">
+                <p class="error-percentage">0% complete</p>
+                <div class="qr-placeholder">
+                    <div class="qr-code"></div>
+                    <p>For more information about this issue and possible fixes, visit<br>
+                    https://cyber.net/stopcode</p>
+                </div>
+                <p class="stop-code">Stop code: HACKER_INTRUSION_DETECTED</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Hacking Message -->
+    <div class="hacking-message" id="hackingMessage">
+        <div class="hacking-text">ВЗЛОМ ОСУЩЕСТВЛЯЕТСЯ</div>
+        <div class="loading-dots">
+            <span>.</span><span>.</span><span>.</span>
+        </div>
+    </div>
+    
+    <!-- Creepy Smile -->
+    <div class="creepy-smile" id="creepySmile">
+        <div class="face">
+            <div class="eye eye-left"></div>
+            <div class="eye eye-right"></div>
+            <div class="mouth"></div>
+        </div>
+    </div>
+    
+    <!-- Final Contact Display -->
+    <div class="final-contact" id="finalContact">
+        <div class="contact-content">
+            <h2 class="contact-title">ВЫ БЫЛИ ВЗЛОМАНЫ</h2>
+            <div class="contact-info-final">
+                <div class="contact-item-final">
+                    <span class="icon">📧</span>
+                    <span>hack@cyber.net</span>
+                </div>
+                <div class="contact-item-final">
+                    <span class="icon">📱</span>
+                    <span>+7 (666) 999-1337</span>
+                </div>
+                <div class="contact-item-final">
+                    <span class="icon">💬</span>
+                    <span>Telegram: @CyberNET_Hacker</span>
+                </div>
+                <div class="contact-item-final">
+                    <span class="icon">🌐</span>
+                    <span>cyber7x9k2m.onion</span>
+                </div>
+            </div>
+            <button class="escape-btn" onclick="escapeHack()">ПОПЫТАТЬСЯ СБЕЖАТЬ</button>
+        </div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo" id="mainLogo">
+                <span class="logo-bracket">[</span>
+                <span class="logo-text">Cyber.NET</span>
+                <span class="logo-bracket">]</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Главная</a>
+                <a href="#services" class="nav-link">Услуги</a>
+                <a href="#tools" class="nav-link">Инструменты</a>
+                <a href="#contact" class="nav-link">Контакты</a>
+                <div class="terminal-cursor">_</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="btn close"></span>
+                        <span class="btn minimize"></span>
+                        <span class="btn maximize"></span>
+                    </div>
+                    <div class="terminal-title">root@cybernet:~$</div>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-text">
+                        <span class="prompt">guest@cybernet:~$ </span>
+                        <span class="command" id="typing-text"></span>
+                        <span class="cursor">|</span>
+                    </div>
+                    <div class="terminal-output">
+                        <p class="green-text">ACCESS GRANTED</p>
+                        <p>Добро пожаловать в подполье...</p>
+                        <p class="red-text">[WARNING] Authorized personnel only</p>
+                    </div>
+                </div>
+            </div>
+            <h1 class="hero-title">
+                <span class="glitch" data-text="ЭЛИТНЫЕ ХАКЕРЫ">ЭЛИТНЫЕ ХАКЕРЫ</span>
+                <br>
+                <span class="highlight">УСЛУГИ</span>
+            </h1>
+            <p class="hero-subtitle">Тестирование на проникновение • Кибербезопасность • Цифровая криминалистика</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="scrollToSection('services')">
+                    <span>ИЗУЧИТЬ УСЛУГИ</span>
+                </button>
+                <button class="btn-secondary" id="contactHackBtn">
+                    <span>СВЯЗАТЬСЯ С НАМИ</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="bracket">&lt;</span>
+                НАШИ УСЛУГИ
+                <span class="bracket">/&gt;</span>
+            </h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="card-header">
+                        <div class="card-icon">🛡️</div>
+                        <h3>Тестирование на проникновение</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Комплексная оценка безопасности для выявления уязвимостей до того, как их найдут злоумышленники.</p>
+                        <ul class="service-features">
+                            <li>Тестирование сетевой безопасности</li>
+                            <li>Тестирование веб-приложений</li>
+                            <li>Тесты социальной инженерии</li>
+                            <li>Аудит беспроводных сетей</li>
+                        </ul>
+                        <div class="price">200,000 - 1,200,000 ₽</div>
+                        <button class="hack-btn" data-service="pentest">
+                            <span class="btn-text">EXECUTE HACK</span>
+                            <span class="btn-loading">HACKING...</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="service-card featured">
+                    <div class="featured-badge">ПОПУЛЯРНО</div>
+                    <div class="card-header">
+                        <div class="card-icon">🔒</div>
+                        <h3>Консультации по кибербезопасности</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Стратегическое руководство по кибербезопасности для защиты ваших цифровых активов и инфраструктуры.</p>
+                        <ul class="service-features">
+                            <li>Обзор архитектуры безопасности</li>
+                            <li>Планирование реагирования на инциденты</li>
+                            <li>Оценка соответствия требованиям</li>
+                            <li>Программы обучения безопасности</li>
+                        </ul>
+                        <div class="price">120,000 - 800,000 ₽</div>
+                        <button class="hack-btn" data-service="consulting">
+                            <span class="btn-text">INFILTRATE SYSTEM</span>
+                            <span class="btn-loading">INFILTRATING...</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-header">
+                        <div class="card-icon">🕵️</div>
+                        <h3>Цифровая криминалистика</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Экспертное расследование и восстановление цифровых доказательств для правовых и безопасных целей.</p>
+                        <ul class="service-features">
+                            <li>Восстановление и анализ данных</li>
+                            <li>Расследование вредоносных программ</li>
+                            <li>Анализ сетевого трафика</li>
+                            <li>Услуги эксперта-свидетеля</li>
+                        </ul>
+                        <div class="price">240,000 - 1,600,000 ₽</div>
+                        <button class="hack-btn" data-service="forensics">
+                            <span class="btn-text">BREACH SECURITY</span>
+                            <span class="btn-loading">BREACHING...</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="tools">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="bracket">{</span>
+                ХАКЕРСКИЕ ИНСТРУМЕНТЫ
+                <span class="bracket">}</span>
+            </h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <span class="tool-name">Nmap</span>
+                        <span class="tool-status active">ACTIVE</span>
+                    </div>
+                    <div class="tool-description">Обнаружение сетей и аудит безопасности</div>
+                    <div class="tool-command">$ nmap -sS -O target.com</div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <span class="tool-name">Metasploit</span>
+                        <span class="tool-status active">ACTIVE</span>
+                    </div>
+                    <div class="tool-description">Фреймворк для тестирования на проникновение</div>
+                    <div class="tool-command">msf6 > use exploit/multi/handler</div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <span class="tool-name">Wireshark</span>
+                        <span class="tool-status standby">STANDBY</span>
+                    </div>
+                    <div class="tool-description">Анализатор сетевых протоколов</div>
+                    <div class="tool-command">$ wireshark -i eth0 -k</div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <span class="tool-name">Burp Suite</span>
+                        <span class="tool-status active">ACTIVE</span>
+                    </div>
+                    <div class="tool-description">Тестирование безопасности веб-приложений</div>
+                    <div class="tool-command">Intercepting HTTP/HTTPS traffic...</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-label">Аудитов безопасности</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="1337">0</div>
+                    <div class="stat-label">Найдено уязвимостей</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="99">0</div>
+                    <div class="stat-label">Процент успеха %</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="24">0</div>
+                    <div class="stat-label">Часов время отклика</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="bracket">/*</span>
+                УСТАНОВИТЬ СОЕДИНЕНИЕ
+                <span class="bracket">*/</span>
+            </h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">📧</div>
+                            <div class="method-details">
+                                <div class="method-label">Защищенная почта</div>
+                                <div class="method-value">contact@киберсеть.secure</div>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">🔐</div>
+                            <div class="method-details">
+                                <div class="method-label">Зашифрованный канал</div>
+                                <div class="method-value">Signal: @киберсеть_sec</div>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">🌐</div>
+                            <div class="method-details">
+                                <div class="method-label">Tor скрытый сервис</div>
+                                <div class="method-value">cyber3x7k9p2m.onion</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Имя</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Электронная почта</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Требуемая услуга</label>
+                            <select id="service" name="service" required>
+                                <option value="">Выберите услугу</option>
+                                <option value="pentest">Тестирование на проникновение</option>
+                                <option value="consulting">Консультации по кибербезопасности</option>
+                                <option value="forensics">Цифровая криминалистика</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Сообщение</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <span>ОТПРАВИТЬ СООБЩЕНИЕ</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="logo" id="mainLogo">
+                        <span class="logo-bracket">[</span>
+                        <span class="logo-text">Cyber.NET</span>
+                        <span class="logo-bracket">]</span>
+                    </div>
+                    <p>Элитные услуги кибербезопасности для цифровой эпохи</p>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-links">
+                        <a href="#privacy">Политика конфиденциальности</a>
+                        <a href="#terms">Условия обслуживания</a>
+                        <a href="#security">Безопасность</a>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">GitHub</a>
+                        <a href="#" class="social-link">Telegram</a>
+                        <a href="#" class="social-link">VK</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Black Hat Network. Все системы под контролем. | Доступ только для элиты.</p>
+                <div class="developer-credit">
+                    <span>Разработано by:</span>
+                    <a href="https://t.me/hard_skil" target="_blank" class="dev-link">@hard_skil</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
