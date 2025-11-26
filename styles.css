@@ -1468,8 +1468,8 @@ html {
 }
 
 .qr-code {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     background-image: url('qr.png');
     background-size: cover; /* Масштабирование изображения */
     background-position: center; /* Центрирование изображения */
@@ -2007,3 +2007,4 @@ html {
     }
 
 }
+
